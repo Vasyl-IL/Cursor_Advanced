@@ -1,0 +1,35 @@
+body{
+    background: linear-gradient(270deg, rgba(255,154,158,1) 3%, rgba(255,154,158,1) 32%, rgba(254,204,234,1) 66%, rgba(254,204,234,1) 97%, rgba(254,204,234,1) 97%, rgba(254,207,239,1) 100%);
+    font-size: 20px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+.coffe_title{
+    box-sizing: border-box;
+    margin: 20px auto;
+    text-align: center;
+}
+.coffee_variables{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    text-align: center;
+}
+.coffee_price{
+    display: flex;
+    justify-content: center;
+}
+
+ul{
+    
+    margin-top: 40px; 
+    list-style: square outside;
+    list-style-type: circle; 
+}
+
+.about{
+    font-size: 20px;
+    font-weight: bold;
+    list-style-type: none;
+    
+}
