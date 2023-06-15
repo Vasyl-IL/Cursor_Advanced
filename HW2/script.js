@@ -8,7 +8,7 @@ function inputN (){
 
 function inputM (){
     do{
-        M = +prompt('Enter first integer number', 'Enter here integer number');
+        M = +prompt('Enter second integer number', 'Enter here integer number');
     } while(((Object.is(NaN, M === true)) ||( M !== parseInt(M))))
 }
 
