@@ -86,5 +86,5 @@ function marksForPairs(paires){
     return pairClone;
 }
 
-const pairsWithMarks = marksForPairs(paires);
+const pairsWithMarks = marksForPairs(pairsWithThemes);
 console.log(pairsWithMarks);
