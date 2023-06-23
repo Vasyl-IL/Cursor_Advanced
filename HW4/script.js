@@ -16,9 +16,7 @@ const themes = [
 
 const marks = [4, 5, 5, 3, 4, 5];
 
-// 1.Розділіть студентів на пари(хлопець + дівчина) для работи над проєктом. 
-// У вас повинен вийти вкладений масив з парами студентів:[["Олександр", "Олена"], [..], [...]];
-
+// 1. Розділіть студентів на пари(хлопець + дівчина) для работи над проєктом. У вас повинен вийти вкладений масив з парами студентів: [["Олександр", "Олена"], [..], [...]];
 function getPairs(students) {
     const countPair = Math.ceil(students.length / 2);
     const res = [];
@@ -41,10 +39,11 @@ function getPairs(students) {
 
 const pairs = getPairs(students);
 console.log(pairs);
+const func1 = document.getElementById('func1');
+func1.innerHTML = JSON.stringify(pairs);
 
-// 2. Зіставте пари з попереднього завдання та теми проєктів, над якими студенти будуть працювати.
-// Повинен вийти вкладений масив виду: [["Олександр і Олена", "Теорія автоматів"], [...], [...]]
 
+// 2. Зіставте пари з попереднього завдання та теми проєктів, над якими студенти будуть працювати. Повинен вийти вкладений масив виду: [["Олександр і Олена", "Теорія автоматів"], [...], [...]]
 function themesForPairs (pairs, themes){
     const themesClone = [...themes]
     const res = [];
@@ -53,9 +52,11 @@ function themesForPairs (pairs, themes){
     }
     return res;
 }
+
 const pairsWithThemes = themesForPairs(pairs, themes);
 console.log(pairsWithThemes);
-
+const func2 = document.getElementById('func2');
+func2.innerHTML = JSON.stringify(pairsWithThemes);
 
 // 3. Зіставте оцінки(marks) зі студентом(students): [["Саша", 4], [...], [...]]
 function marksForStudents(students, marks){
@@ -69,11 +70,11 @@ function marksForStudents(students, marks){
 
 const studentsWithMarks = marksForStudents(students, marks);
 console.log(studentsWithMarks);
+const func3 = document.getElementById('func3');
+func3.innerHTML = JSON.stringify(studentsWithMarks);
 
-// 4. Поставте кожній парі випадкову оцінку(від 1 до 5) за проєкт 
-// (тут функція буде не чистою, але не повинна мутувати массив):
-// [["Олександр і Олена", "Теорія автоматів", 5], [...], [...]]
 
+//4.  Поставте кожній парі випадкову оцінку(від 1 до 5) за проєкт(тут функція буде нечистою, але не повинна мутувати массив): [["Олександр і Олена", "Теорія автоматів", 5], [...], [...]]
 function getRandomNumber(min , max){
     return Math.floor(min + Math.random() * (max + 1 - min));
 }
@@ -88,3 +89,5 @@ function marksForPairs(paires){
 
 const pairsWithMarks = marksForPairs(pairsWithThemes);
 console.log(pairsWithMarks);
+const func4 = document.getElementById('func4');
+func4.innerHTML = JSON.stringify(pairsWithMarks);
