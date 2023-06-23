@@ -68,7 +68,7 @@ function marksForStudents(students, marks){
 }
 
 const studentsWithMarks = marksForStudents(students, marks);
-
+console.log(studentsWithMarks);
 // 4. Поставте кожній парі випадкову оцінку(від 1 до 5) за проєкт 
 // (тут функція буде не чистою, але не повинна мутувати массив):
 // [["Олександр і Олена", "Теорія автоматів", 5], [...], [...]]
