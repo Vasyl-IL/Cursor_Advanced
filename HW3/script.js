@@ -1,8 +1,11 @@
 
 // 1.  Створити функцію,яка отримує будь-яке число та виводить найбільшу цифру в цьому числі.
 
-const getMaxDigit = (n = prompt('Write a number','Write a number')) => 
-+(String(n)).split('').sort((a,b) => a-b).pop();
+
+const getMaxDigit = () => { 
+    let n = prompt('Write a number','Write a number'); 
+      return  +(String(n)).split('').sort((a,b) => a-b).pop();
+}
 
 // 2. Створити функцію, яка визначає ступінь числа. Не використовуючи Math.pow та **. Використовуйте цикл
 
@@ -26,44 +29,56 @@ const pow = () => {
 
 // 3. Створити функцію, яка форматує ім'я, роблячи першу букву великою. 
 
-const formatName = (personMame = prompt('Write your Name','Write your name')) =>  
-personMame[0].toUpperCase() + personMame.slice(1, personMame.length).toLowerCase();
+const formatName = () =>{
+    let personMame = prompt('Write your Name','Write your name');  
+    return personMame[0].toUpperCase() + personMame.slice(1, personMame.length).toLowerCase();
+}
 
 // 4. Створити функцію, яка вираховує суму, що залишається після оплати податку від зарабітньої плати. 
 
-const salaryProfit = (salary = prompt('Write your salary','Write your salary'),
-tax = prompt('Write a tax','Write a tax')) => salary - (tax * salary) / 100;
+const salaryProfit = () => {
+    let salary = prompt('Write your salary','Write your salary');
+    let tax = prompt('Write a tax','Write a tax');
+    return salary - (tax * salary) / 100;
+}
 
 // 5. Створити функцію, яка повертає випадкове ціле число в діапазоні від N до M.
 
-const randomNumber = (min = prompt('Write the first number','Write the first number'),
-max = prompt('Write the second number','Write the second number')) => 
-Math.floor(Math.random() * (max - min) + min);
+const randomNumber = () => {
+    let min = prompt('Write the first number','Write the first number');
+    let max = prompt('Write the second number','Write the second number'); 
+    let result = Math.floor(Math.random() * (max - min) + min);
+    return result
+}
     
 // 6. Створити функцію, яка рахує скільки разів певна буква повторюється в слові.
 
-function countLetter  (word = prompt('Write a word','Write a word'),
-letter = prompt('Write a letter','Write a letter')) { 
-let count = 0;
-word.split('').forEach((el) => el.toLowerCase() == letter.toLowerCase() ? count++ : count );
-return count
+const countLetter = () => {
+    let word = prompt('Write a word','Write a word');
+    let letter = prompt('Write a letter','Write a letter')  
+    let stringLC = letter.toLowerCase();
+    let wordLC = word.toLowerCase();
+    let count = wordLC.split(stringLC).length - 1;
+    
+    return count
 }
+
+
 
 // 7. Створіть функцію, яка конвертує долари в гривні та навпаки в залежності від наявності символа $ або UAH в рядку.
 // Врахуйте, інші валюти не конвертуються, потрібно виводити помилку, і також регістр uah не має значення.
 
 function excange() {
 let usdRate = 38; 
-let uahRate = 1; 
 let amountOfMoney = prompt('Write amount of money','Write amount of money');
-let currencyOfExcange = prompt('Write a currency of excange','$ or UAH')
+let currencyOfExcange = prompt('Write a currency of excange','$ or UAH');
 
 if (currencyOfExcange === "$") {
     return amountOfMoney * usdRate;
 } else if  (currencyOfExcange === "UAH" || "uah") {
-    return amountOfMoney * uahRate;
-} else {
- prompt('Write a currency of excange again')
+    return Math.round(amountOfMoney / usdRate);
+} else  if (currencyOfExcange != "$" || "UAH" || "uah"){
+    prompt('Write correct currency')
 }
 }
       
@@ -71,7 +86,7 @@ if (currencyOfExcange === "$") {
 // по замовчуванню = 8 символам.
 
 function getRandomPassword(leng = 8){
-    const numberOfPassword = prompt('Write a number of password characterd');
+    let numberOfPassword = prompt('Write a number of password characterd');
     const res = [];
     if (numberOfPassword === 0){
     for(let i = 1 ; i <= leng ; i++ ){
@@ -90,15 +105,19 @@ function getRandomPassword(leng = 8){
 // 9. Створіть функцію, яка видаляє всі букви з речення.
 // Приклад: deleteLetters('a', "blablabla") -> "blblbl"
 
-const deleteLetter = (str = prompt('Write a word','Write a word'),
-letter = prompt('Write a letter','Write a letter')) => str.split('').filter((el) => el.toLowerCase() != letter.toLowerCase()).join('');
+const deleteLetter = ()=> {
+    let str = prompt('Write a word','Write a word');
+    let letter = prompt('Write a letter','Write a letter'); 
+    return str.split('').filter((el) => el.toLowerCase() != letter.toLowerCase()).join('')
+}
 
 
 // 10. Створіть функцію, яка перевіряє, чи є слово паліндромом.
 // Приклад: isPalyndrom("мадам") -> true, isPalyndrom("кокос") -> false,
 // isPalyndrom("Я несу гусеня") -> true
 
-function isPalyndrom(str = prompt('Cheak if this sentence or word is palyndrom', 'Write here')){
+function isPalyndrom(){
+    let str = prompt('Cheak if this sentence or word is palyndrom', 'Write here');
     const arrLetters = str.split('').filter((el) => el !== " ").map((elem) => elem.toLowerCase());
     const shouldBeTheSame = Math.floor(arrLetters.length / 2) 
     let isTheSame = 0;
@@ -122,7 +141,7 @@ function isPalyndrom(str = prompt('Cheak if this sentence or word is palyndrom',
 // "сктдеим"
 
 function deleteDuplicat(){
-    let str = prompt('Write a word', 'Write a word')
+    let str = prompt('Write a word', 'Write a word');
     const arr = str.toLowerCase().split('').filter((el) => el !== " "); 
     if(arr.every((elem, index, arr) => arr.indexOf(elem) === index)){ 
         return str;
@@ -133,13 +152,16 @@ function deleteDuplicat(){
         const unique =  arr.filter((el) => !duplicatedUnique.includes(el));
         return unique.join('');
     }
+return deleteDuplicat();    
 }
-// deleteDuplicat();
+
+
 /*===============================================*/
 
 
 document.writeln(
-    `${alert('Завдання #1 Створити функцію,яка отримує будь-яке число та виводить найбільшу цифру в цьому числі')}
+    `
+    ${alert('Завдання #1 Створити функцію,яка отримує будь-яке число та виводить найбільшу цифру в цьому числі')}
     Task 1:  ${getMaxDigit()}<br>
     ${alert('Завдання #2 Створити функцію, яка визначає ступінь числа')}
     Task 2:  ${pow()}<br>
@@ -163,4 +185,5 @@ document.writeln(
     Task 11: ${deleteDuplicat()}<br>
     `
 )
+
 
