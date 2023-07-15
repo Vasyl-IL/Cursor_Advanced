@@ -30,7 +30,7 @@ const students = [{
 // Зверніть увагу – назву предмету необхідно повертати з великої літери, а _ –
 // замінити на пробіл
 function getSubjects(students) {
-    return  Object.keys(students.subjects).map(item => item[0].toUpperCase() + item.slice(1));
+    return  Object.keys(students.subjects).map(item => item[0].toUpperCase() + item.slice(1).replace("_", " "));
     }
     
 console.log("Tanya's sybjects:", getSubjects(students[0]));
