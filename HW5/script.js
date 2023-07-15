@@ -8,9 +8,9 @@
 //     2]
 
         function getRandomArray() {
-            let length = prompt('Enter the array lenght','Enter the array lenght');
-            let min = prompt('Enter the min value of array','Enter the min value of array');
-            let max = prompt('Enter the max value of array','Enter the max value of array');
+            let length = 10;
+            let min = 1;
+            let max = 100;
             let arr = [];
         
          for (let i = 0; i < length; i++) {
@@ -99,20 +99,13 @@ function countPositiveNumbers() {
 
 document.writeln(
     `
-    ${alert('Завдання #1 Створіть функцію, яка повертає масив випадкових цілих чисел.')}
     Task 1:  ${getRandomArray()}<br>
-    ${alert('Завдання #2 Створіть функцію, яка вираховує моду всіх переданих в неї аргументів')}
     Task 2:  ${getModa()}<br>
-    ${alert('Завдання #3 Створіть функцію, яка рахує середнє арифметичне всіх переданих в неї аргументів')}
     Task 3:  ${getAverage()}<br>
-    ${alert('Завдання #4 Створіть функцію, яка рахує середнє арифметичне всіх переданих в неї аргументів')}
     Task 4:  ${getMedian()}<br>
-    ${alert('Завдання #5 Створіть функцію, яка фільтрує парні числа передані як аргументи функції.')}
     Task 5:  ${filterEvenNumbers()}<br>
-    ${alert('Завдання #6 Створіть функцію, яка порахує кількість чисел більших 0')}
     Task 6:  ${countPositiveNumbers()}<br>
-    ${alert('Завдання #7 Створіть функцію, яка відфільтрує усі елементи в масиві та залишить тільки ті, які діляться на ціло на 5')}
     Task 7:  ${getDividedByFive()}<br>
-    
+ 
     `
     )
